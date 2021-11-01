@@ -1,8 +1,8 @@
   
 
-#include "NixieDisplay.h"
+#include "NixieTube.h"
   
-  NixieDisplay::NixieDisplay(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin){
+  NixieTube::NixieTube(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin){
     this->driverPinA = driverPinA;
     this->driverPinB = driverPinB;
     this->driverPinC = driverPinC;
@@ -11,7 +11,7 @@
     this->dotPin = dotPin;
   }
   
-  NixieDisplay::setDriver(){
+  NixieTube::setDriver(){
     switch(numberDisplayed){
       case 0: binaryNumberDisplayed = 0b0000;
         break;
@@ -45,7 +45,7 @@
   analogWrite(tubeAnnode, brightness);
   }
 
-  NixieDisplay::init(){
+  NixieTube::init(){
   pinMode(driverPinA, OUTPUT);
   pinMode(driverPinB, OUTPUT);
   pinMode(driverPinC, OUTPUT);
@@ -53,20 +53,20 @@
   pinMode(tubeAnnode, OUTPUT);
   }
 
-  NixieDisplay::setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn, byte brightnessIn){
+  NixieTube::setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn, byte brightnessIn){
     numberDisplayed = setNumberToDisplay;
     brightness = brightnessIn;
     decimalPoint = decimalPointIn;
     setDriver();
   }
 
-  NixieDisplay::tubeShutdown(){
+  NixieTube::tubeShutdown(){
     numberDisplayed = 69; //nice.
     setDriver();
     digitalWrite(tubeAnnode, LOW);
   }
 
-  NixieDisplay::tubeOff(){
+  NixieTube::tubeOff(){
     digitalWrite(tubeAnnode, LOW);
     digitalWrite(dotPin, LOW);
   }
