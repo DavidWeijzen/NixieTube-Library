@@ -31,8 +31,8 @@
  */
 
 /* 
- *  To use this liberary, create a class with: NixieDisplay name(Driver A, Driver B, Driver C, Driver D, Annode Pin, Decimal point Pin) All of them bytes.
- *  For example: NixieDisplay tube1(A0,A1,A2,A3,9,10); 
+ *  To use this liberary, create a class with: NixieTube name(Driver A, Driver B, Driver C, Driver D, Annode Pin, Decimal point Pin) All of them bytes.
+ *  For example: NixieTube tube1(A0,A1,A2,A3,9,10); 
  *  In the setup do an initialisation with init()
  *  For example: tube1.init();
  *  Set a number to display with setNumberToDisplay(byte numberToDisplay, bool Decimal Point, byte brightness(default 255));
@@ -45,7 +45,7 @@
 
 #include "Arduino.h"
 
-class NixieDisplay{
+class NixieTube{
   private:
   
   byte numberDisplayed;
@@ -62,7 +62,7 @@ class NixieDisplay{
   public:
 
   //constructor
-  NixieDisplay(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin);
+  NixieTube(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin);
 
   //methods
   init();
