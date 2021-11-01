@@ -1,4 +1,4 @@
-
+  
 
 #include "NixieDisplay.h"
   
@@ -42,6 +42,7 @@
   digitalWrite(driverPinC, binaryNumberDisplayed & 0b00000100);
   digitalWrite(driverPinD, binaryNumberDisplayed & 0b00001000);
   digitalWrite(dotPin, decimalPoint);
+  analogWrite(tubeAnnode, brightness);
   }
 
   NixieDisplay::init(){
@@ -52,8 +53,9 @@
   pinMode(tubeAnnode, OUTPUT);
   }
 
-  NixieDisplay::setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn){
+  NixieDisplay::setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn, byte brightnessIn){
     numberDisplayed = setNumberToDisplay;
+    brightness = brightnessIn;
     decimalPoint = decimalPointIn;
     setDriver();
   }

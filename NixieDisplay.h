@@ -35,8 +35,8 @@
  *  For example: NixieDisplay tube1(A0,A1,A2,A3,9,10); 
  *  In the setup do an initialisation with init()
  *  For example: tube1.init();
- *  Set a number to display with setNumberToDisplay(byte numberToDisplay, bool Decimal Point);
- *  For example: tube1.setNumberToDisplay(7,HIGH);
+ *  Set a number to display with setNumberToDisplay(byte numberToDisplay, bool Decimal Point, byte brightness(default 255));
+ *  For example: tube1.setNumberToDisplay(7,HIGH,128);
  *  To turn the tube system off use tubeShutdown();
  *  To turn this tube off but keep the number on the driver use tubeOff();
  *  
@@ -66,7 +66,7 @@ class NixieDisplay{
 
   //methods
   init();
-  setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn);
+  setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn, byte brightnessIn = 255);
   setDriver();
   tubeShutdown();
   tubeOff();
