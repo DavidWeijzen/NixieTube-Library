@@ -62,12 +62,12 @@ class NixieTube{
   public:
 
   //constructor
-  NixieTube(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin);
+  NixieTube();
 
   //methods
-  init();
+  init(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin);
   setNumberToDisplay(byte setNumberToDisplay, bool decimalPointIn, byte brightnessIn = 255);
   setDriver();
-  tubeShutdown();
-  tubeOff();
+  Shutdown();
+  Off();
 };
