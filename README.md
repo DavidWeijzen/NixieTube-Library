@@ -1,7 +1,7 @@
-#NixieTube-Library
+# NixieTube-Library
 A simple library to display a number on a single nixie tube on arduino platforms.
 
-##How it works:
+## How it works:
 Create a class off nixie driver and define it's pins.
 For example:
 ```
@@ -15,7 +15,7 @@ setNumberToDisplay({byte numberToDisplay}, {bool Decimal Point}, [byte brightnes
 ```
 To tun the tube completely off use the off() function.
 
-##How to install the library:
+## How to install the library:
 1. Download this library as a zip
 2. Go to your arduino IDE
 3. On the top left, click "sketch"
