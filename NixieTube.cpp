@@ -3,8 +3,13 @@
 #include "NixieTube.h"
 
   //constructor
-  NixieTube::NixieTube(){ 
-
+  NixieTube::NixieTube(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin){ 
+	this->driverPinA = driverPinA;
+	this->driverPinB = driverPinB;
+	this->driverPinC = driverPinC;
+	this->driverPinD = driverPinD;
+	this->tubeAnnode = tubeAnnode;
+	this->dotPin = dotPin;
   }
 
   //methods
@@ -42,13 +47,7 @@
   analogWrite(tubeAnnode, brightness);
   }
 
-  NixieTube::init(byte driverPinA, byte driverPinB, byte driverPinC, byte driverPinD, byte tubeAnnode, byte dotPin){
-  this->driverPinA = driverPinA;
-  this->driverPinB = driverPinB;
-  this->driverPinC = driverPinC;
-  this->driverPinD = driverPinD;
-  this->tubeAnnode = tubeAnnode;
-  this->dotPin = dotPin;
+  NixieTube::init(){
   pinMode(driverPinA, OUTPUT);
   pinMode(driverPinB, OUTPUT);
   pinMode(driverPinC, OUTPUT);
@@ -63,13 +62,10 @@
     setDriver();
   }
 
-  NixieTube::Shutdown(){
-    numberDisplayed = 69; //nice.
-    setDriver();
-    digitalWrite(tubeAnnode, LOW);
-  }
 
-  NixieTube::Off(){
+  NixieTube::off(){
     digitalWrite(tubeAnnode, LOW);
     digitalWrite(dotPin, LOW);
+    numberDisplayed = 69; //nice.
+    setDriver();
   }
