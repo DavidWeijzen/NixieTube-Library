@@ -13,7 +13,7 @@
  *
  *
  *    Liberary to use on Arduino compatible boards to drive a single nixie tube.
- *    Copyright (C) 2021  David Weijzen
+ *    Copyright (C) 2021-2025  David Weijzen
  *
  *    This program is free software: you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
@@ -37,8 +37,7 @@
  *  For example: tube1.init();
  *  Set a number to display with setNumberToDisplay(byte numberToDisplay, bool Decimal Point, byte brightness(default 255));
  *  For example: tube1.setNumberToDisplay(7,HIGH,128);
- *  To turn the tube system off use tubeShutdown();
- *  To turn this tube off but keep the number on the driver use tubeOff();
+ *  To turn off the tube use tube1.off();
  *  
  */
 
